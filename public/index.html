@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ping Pong Game</title>
+
+    <style>
+        body {
+            background-image: url('assets/dirt.png');
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: white;
+            box-shadow: 0 0 36px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button" id="btn-start-game">Start game</button>
+    <br><br>
+    <button type="button" id="btn-restart-game">Restart game</button>
+    <br><br>
+    <button type="button" id="btn-stop-game">Stop game</button>
+
+
+<!--Script-->
+<script src="libs/jquery.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/socket.io.min.js"></script>
+
+<script src="es6/common-vls.js"></script>
+<script src="es6/reset.js"></script>
+<script src="es6/tick.js"></script>
+<script src="es6/board.js"></script>
+<script src="es6/player.js"></script>
+<script src="es6/game.js"></script>
+<script src="es6/main.js"></script>
+<script src="es6/checker.js"></script>
+<script src="es6/render.js"></script>
+<script src="es6/click.js"></script>
+<script src="es6/socket.js"></script>
+
+</body>
+</html>
