@@ -11,6 +11,8 @@ var Player = function (type) {
 
     this.tickMgr = [];
 
+    this.score = 0;
+
     this.render = () => {
         for (let i = 0; i < this.tickMgr.length; i++) {
             this.tickMgr[i].render(type);

@@ -7,24 +7,13 @@
 canvas.addEventListener('click', (event) => {
     let mousePos = getMousePos(canvas, event);
 
-    // if (turn === 1) {
-    //     socket.emit('click', mousePos);
-    //     turn *= -1;
-    //     matrix[mousePos.x][mousePos.y] = player.type;
-    //     console.log('turn = ' + turn);
-    // } else {
-    //     return;
-    // }
-
     if (!allowClick(mousePos.x, mousePos.y)) return;
 
     socket.emit('click', mousePos);
     turn *= -1;
     matrix[mousePos.x][mousePos.y] = player.type;
-    console.log('turn = ' + turn);
 
     player.tickMgr.push(new Tick(mousePos.x, mousePos.y));
-    player.render();
 
     function getMousePos(canvas, event) {
         let rect = canvas.getBoundingClientRect();
@@ -37,7 +26,6 @@ canvas.addEventListener('click', (event) => {
     }
 
     if (checkWin(mousePos.x, mousePos.y, player.type)) {
-        board.drawLineWin();
         socket.emit('player_win', lineWin);
     }
 

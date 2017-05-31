@@ -5,7 +5,7 @@
 
 var socket = io('/');
 
-var size = 30;
+var size = 20;
 SIZE_CELL = SIZE_BOARD / size;
 
 var board = new Board();
@@ -17,3 +17,5 @@ var matrix = new Array(size);
 var turn = 0;
 
 var lineWin = {};
+
+var playingGame = false;

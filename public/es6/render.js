@@ -12,4 +12,12 @@ var render = () => {
 
     player.render();
     playerFriend.render();
+
+    board.drawScore();
+    board.drawWin();
+
+    requestAnimationFrame(render);
 };
+
+var w = window;
+requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;

@@ -18,5 +18,8 @@ xImg.src = "assets/x.png";
 
 
 
-const COLOR_LINE = "rgb(0,0,0)";
-const COLOR_LINE_WIN = "rgb(255,0,0)";
+const COLOR_LINE = '#0000FF';
+const COLOR_LINE_WIN = '#FF0000';
+
+const COLOR_PLAYER = '#FF0000';
+const COLOR_PLAYER_FRIEND = '#0000FF';

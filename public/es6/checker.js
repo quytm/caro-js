@@ -5,8 +5,7 @@
 'use strict';
 
 function allowClick(x, y) {
-    console.log('turn = ' + turn);
-    return turn === 1 && checkConflict(x, y);
+    return playingGame && turn === 1 && checkConflict(x, y);
 }
 
 function checkConflict(x, y) {
@@ -14,7 +13,6 @@ function checkConflict(x, y) {
 }
 
 function checkWin(x, y, type) {
-    // console.log(checkOrientX(x, y, type) + checkOrientY(x, y, type) + checkOrientXAndY(x, y, type) + checkOrientXAndNegativeY(x, y, type));
     return checkOrientX(x, y, type) || checkOrientY(x, y, type) || checkOrientXAndY(x, y, type) || checkOrientXAndNegativeY(x, y, type);
 }
 

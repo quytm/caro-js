@@ -26,7 +26,7 @@ $(document).ready(function () {
     $('#btn-restart-game').click(() => {
         socket.emit('restart_game');
         reset();
-        render();
+        // render();
         turn = 1;
     });
 

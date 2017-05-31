@@ -20,8 +20,9 @@ server.listen(port, function () {
 var Player = function () {
     this.id = '';
     this.ticks = [];
+    this.score = 0;
 };
-var size = 30;
+var size = 20;
 var matrix = new Array(size);
 for (let i = 0; i < size; i++) {
     matrix[i] = new Array(size);
@@ -107,6 +108,13 @@ io.on('connection', function (socket) {
         }
         if (value) {
             socket.broadcast.emit('player_win', data);
+            if (socket.id === player1.id) {
+                player1.score++;
+            } else if (socket.id === player2.id) {
+                player2.score++;
+            }
+            io.in(player1.id).emit('new_score', {player: player1.score, friend: player2.score});
+            io.in(player2.id).emit('new_score', {player: player2.score, friend: player1.score});
         }
     })
 
